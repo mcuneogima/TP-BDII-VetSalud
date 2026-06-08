@@ -1,0 +1,19 @@
+{
+  "name": "tpo-bd2",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "check": "node app.js --check"
+  },
+  "dependencies": {
+    "cassandra-driver": "^4.9.0",
+    "csv-parser": "^3.2.1",
+    "mongoose": "^9.6.3",
+    "uuid": "^14.0.0"
+  }
+}
