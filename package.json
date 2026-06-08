@@ -1,0 +1,17 @@
+{
+  "name": "vetsalud",
+  "version": "1.0.0",
+  "description": "Sistema de Gestión de Clínica Veterinaria - BD2 2026",
+  "type": "module",
+  "scripts": {
+    "seed:mongo": "node seeds/seed_mongo.js",
+    "seed:redis": "node seeds/seed_redis.js",
+    "seed:all": "node seeds/seed_mongo.js && node seeds/seed_redis.js"
+  },
+  "dependencies": {
+    "csv-parse": "^5.5.6",
+    "dotenv": "^16.4.5",
+    "mongodb": "^6.8.0",
+    "redis": "^4.7.0"
+  }
+}

@@ -1,0 +1,29 @@
+# Dependencias
+node_modules/
+
+# Variables de entorno
+.env
+
+# Logs
+*.log
+npm-debug.log*
+
+# Archivos temporales
+tmp/
+temp/
+.cache/
+
+# MacOS
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# VSCode local
+.vscode/
+
+# Coverage
+coverage/
+
+# Codespaces
+.devcontainer/.env
