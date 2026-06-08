@@ -111,6 +111,16 @@ try {
 
   await db.collection('veterinarios').createIndex({ sucursal: 1 })
 
+  await db.collection('consultas').createIndex({ estado: 1 }) 
+
+  await db.collection('consultas').createIndex({ motivo: 1, costo: 1 }) 
+
+  await db.collection('consultas').createIndex({ id_paciente: 1, fecha: -1 }) 
+
+  await db.collection('consultas').createIndex({ id_vet: 1, fecha: -1 })  
+
+  await db.collection('propietarios').createIndex({ activo: 1 })
+  
   console.log('MongoDB poblado correctamente')
 
 } catch (err) {

@@ -59,10 +59,6 @@ try {
 
   for (const consulta of consultas) {
 
-    await redisClient.incr(
-      `stats:consultas:${consulta.id_vet}`
-    )
-
     const fecha = new Date(consulta.fecha)
 
     const periodo =
