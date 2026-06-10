@@ -1,0 +1,16 @@
+id_vet,nombre,apellido,matricula,especialidad,sucursal,activo
+V001,Gabriela,Fontana,VET-0041,Clínica General,Palermo,True
+V002,Hernán,Castillo,VET-0078,Cirugía,Belgrano,True
+V003,Cecilia,Ríos,VET-0112,Dermatología,Palermo,True
+V004,Marcos,Aguirre,VET-0055,Odontología,Caballito,False
+V005,Lorena,Ibáñez,VET-0089,Clínica General,Caballito,True
+V006,Laura,Quiroga,VET-0125,Cardiología,Palermo,True
+V007,Fernando,Méndez,VET-0131,Neurología,Belgrano,True
+V008,María,Suárez,VET-0137,Animales Exóticos,Caballito,True
+V009,Pablo,Funes,VET-0142,Traumatología,Palermo,True
+V010,Carolina,Vega,VET-0148,Oftalmología,Belgrano,True
+V011,Javier,Acosta,VET-0153,Diagnóstico por Imágenes,Caballito,True
+V012,Melina,Ponce,VET-0159,Nutrición,Palermo,True
+V013,Esteban,Romero,VET-0162,Endocrinología,Belgrano,True
+V014,Ailén,Cabrera,VET-0168,Medicina Felina,Caballito,True
+V015,Gonzalo,Leiva,VET-0171,Urgencias,Palermo,True

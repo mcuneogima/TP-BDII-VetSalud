@@ -1,0 +1,19 @@
+id_consulta,id_paciente,id_vet,fecha,motivo,diagnostico,costo,estado
+CON001,P001,V001,2025-10-05,Control anual,Sano,4500,Cerrada
+CON002,P002,V003,2025-10-12,Alergia cutánea,Dermatitis atópica,6200,Cerrada
+CON003,P003,V002,2025-09-20,Fractura pata,Fractura radio,15000,Cerrada
+CON004,P004,V001,2025-11-01,Pérdida de apetito,Estrés ambiental,3800,Seguimiento
+CON005,P005,V005,2025-11-10,Vómitos recurrentes,Gastritis,5500,Seguimiento
+CON006,P006,V003,2025-11-18,Revisión piel,Eccema,4100,Cerrada
+CON007,P001,V001,2025-12-02,Control post-vacuna,Sin novedades,2000,Cerrada
+CON008,P007,V002,2025-12-10,Extracción dentaria,Periodontitis,12000,Cerrada
+CON009,P008,V001,2026-01-15,Control general,Sano,4800,Cerrada
+CON010,P002,V003,2026-02-03,Picazón persistente,Dermatitis alérgica,6700,Cerrada
+CON011,P005,V002,2026-02-20,Cojera tras ejercicio,Distensión muscular,7200,Cerrada
+CON012,P006,V003,2026-03-08,Caída de pelo,Alopecia leve,5900,Seguimiento
+CON013,P001,V001,2026-03-18,Control anual,Sano,5000,Cerrada
+CON014,P007,V004,2026-04-02,Limpieza dental,Gingivitis leve,9500,Cerrada
+CON015,P004,V001,2026-04-15,Control nutricional,Peso adecuado,4200,Cerrada
+CON016,P008,V001,2026-05-06,Lesión en ala,Traumatismo leve,8800,Seguimiento
+CON017,P002,V003,2026-05-21,Control dermatológico,Mejoría clínica,3500,Cerrada
+CON018,P005,V005,2026-06-05,Vacunación anual,Apto para vacunación,3000,Cerrada

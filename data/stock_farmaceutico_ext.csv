@@ -1,0 +1,17 @@
+id_producto,nombre,categoria,unidades,precio_unit,vencimiento,proveedor
+PRD001,Amoxicilina 250mg,Antibiótico,120,850,2026-06-30,VetFarma SA
+PRD002,Meloxicam 2mg,Antiinflamatorio,85,1200,2026-09-15,BioVet SRL
+PRD003,Ivermectina 1%,Antiparasitario,60,950,2026-03-20,VetFarma SA
+PRD004,Frontline Spray,Antiparasitario,40,3500,2027-01-10,MediAnimal
+PRD005,Suero fisiológico 1L,Solución,200,400,2026-12-01,BioVet SRL
+PRD006,Ketamina 10%,Anestésico,25,5800,2026-05-01,MediAnimal
+PRD007,Cefalexina 500mg,Antibiótico,90,1100,2027-02-15,VetFarma SA
+PRD008,Prednisolona 20mg,Corticoide,75,1350,2026-11-20,BioVet SRL
+PRD009,Shampoo Dermatológico,Higiene,50,2800,2028-01-10,MediAnimal
+PRD010,Pipeta Antipulgas XL,Antiparasitario,130,4200,2027-07-30,VetFarma SA
+PRD011,Vitamina B12,Suplemento,65,950,2027-05-05,BioVet SRL
+PRD012,Collar Isabelino,Accesorio,40,1800,2030-01-01,MediAnimal
+PRD013,Alimento Renal Canino,Nutrición,55,9200,2027-04-18,NutriPet
+PRD014,Alimento Renal Felino,Nutrición,48,8800,2027-03-22,NutriPet
+PRD015,Clorhexidina Spray,Antiséptico,70,2300,2027-08-14,BioVet SRL
+PRD016,Gasas Estériles,Insumo,300,150,2029-12-31,MediAnimal

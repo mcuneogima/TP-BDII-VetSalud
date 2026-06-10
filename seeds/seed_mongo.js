@@ -1,5 +1,6 @@
 import { connectMongo, closeMongo, getDB } from '../config/db.js'
 import { readCsv } from './csv.js'
+import { csvPath, isExtended } from './dataset.js'
 
 await connectMongo()
 
@@ -7,12 +8,12 @@ const db = getDB()
 
 try {
 
-  const propietarios = readCsv('./data/propietarios.csv')
-  const pacientes = readCsv('./data/pacientes.csv')
-  const veterinarios = readCsv('./data/veterinarios.csv')
-  const consultas = readCsv('./data/consultas.csv')
-  const vacunaciones = readCsv('./data/vacunaciones.csv')
-  const stock = readCsv('./data/stock_farmaceutico.csv')
+  const propietarios = readCsv(csvPath('propietarios'))
+  const pacientes = readCsv(csvPath('pacientes'))
+  const veterinarios = readCsv(csvPath('veterinarios'))
+  const consultas = readCsv(csvPath('consultas'))
+  const vacunaciones = readCsv(csvPath('vacunaciones'))
+  const stock = readCsv(csvPath('stock_farmaceutico'))
 
   await Promise.all([
     db.collection('propietarios').deleteMany({}),

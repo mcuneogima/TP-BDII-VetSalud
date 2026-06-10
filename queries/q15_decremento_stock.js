@@ -1,4 +1,3 @@
-// queries/q15_actualizar_stock.js
 import { getDB } from '../config/db.js'
 import { redisClient } from '../config/db.js'
 import { withMongo } from '../utils/withMongo.js'
@@ -35,8 +34,8 @@ const idProducto = args[0]?.trim()
 const cantidad = Number(args[1])
 
 if (!idProducto || !args[1]) {
-  console.error('Uso: node q15_actualizar_stock.js <id_producto> <cantidad>')
-  console.error('Ejemplo: node q15_actualizar_stock.js PRD001 5')
+  console.error('Uso: node q15_decremento_stock.js <id_producto> <cantidad>')
+  console.error('Ejemplo: node q15_decremento_stock.js PRD001 5')
   process.exit(1)
 }
 

@@ -1,15 +1,16 @@
 import { connectRedis, closeRedis, redisClient } from '../config/db.js'
 import { readCsv } from './csv.js'
+import { csvPath, isExtended } from './dataset.js'
 
 await connectRedis()
 
 try {
 
-  const vacunaciones = readCsv('./data/vacunaciones.csv')
+  const vacunaciones = readCsv(csvPath('vacunaciones'))
 
-  const stock = readCsv('./data/stock_farmaceutico.csv')
+  const stock = readCsv(csvPath('stock_farmaceutico'))
 
-  const consultas = readCsv('./data/consultas.csv')
+  const consultas = readCsv(csvPath('consultas'))
 
   await redisClient.flushDb()
 

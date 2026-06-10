@@ -1,0 +1,17 @@
+id_propietario,nombre,apellido,dni,email,telefono,ciudad,provincia
+C001,Ana,Rodríguez,30456789,ana@gmail.com,1145001234,Buenos Aires,Buenos Aires
+C002,Roberto,Díaz,27654321,rob@gmail.com,1156002345,Rosario,Santa Fe
+C003,Valentina,Molina,41234567,vale@gmail.com,1167003456,Córdoba,Córdoba
+C004,Diego,Herrera,35789012,diego@gmail.com,1178004567,Mendoza,Mendoza
+C005,Paula,Sosa,38012345,paula@gmail.com,1189005678,La Plata,Buenos Aires
+C006,Tomás,Juárez,42345678,tomas@gmail.com,1190006789,Salta,Salta
+C007,Lucía,Fernández,35678123,lucia@gmail.com,1133445566,Buenos Aires,Buenos Aires
+C008,Martín,Pérez,33456781,martin@gmail.com,1144556677,Mar del Plata,Buenos Aires
+C009,Sofía,López,38900123,sofia@gmail.com,1155667788,Rosario,Santa Fe
+C010,Nicolás,García,40123456,nico@gmail.com,1166778899,Córdoba,Córdoba
+C011,Julieta,Torres,37890123,juli@gmail.com,1177889900,Mendoza,Mendoza
+C012,Federico,Ruiz,41222333,fede@gmail.com,1188990011,La Plata,Buenos Aires
+C013,Camila,Silva,42333444,camila@gmail.com,1199001122,Neuquén,Neuquén
+C014,Santiago,Martínez,36555111,santi@gmail.com,1111223344,Salta,Salta
+C015,Agustina,Navarro,39444555,agus@gmail.com,1122334455,Tucumán,Tucumán
+C016,Franco,Benítez,35666777,franco@gmail.com,1133557799,Bahía Blanca,Buenos Aires

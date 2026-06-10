@@ -41,8 +41,8 @@ const args = process.argv.slice(2)
 const idPaciente = args[0]?.trim()
 
 if (!idPaciente) {
-  console.error('Uso: node q3_historial_paciente.js <id_paciente>')
-  console.error('Ejemplo: node q3_historial_paciente.js P001')
+  console.error('Uso: node q3_historial_pacientes.js <id_paciente>')
+  console.error('Ejemplo: node q3_historial_pacientes.js P001')
   process.exit(1)
 }
 

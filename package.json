@@ -5,8 +5,13 @@
   "type": "module",
   "scripts": {
     "seed:mongo": "node seeds/seed_mongo.js",
+    "seed:mongo:extended": "node seeds/seed_mongo.js --extended",
+
     "seed:redis": "node seeds/seed_redis.js",
-    "seed:all": "node seeds/seed_mongo.js && node seeds/seed_redis.js"
+    "seed:redis:extended": "node seeds/seed_redis.js --extended",
+
+    "seed:all": "node seeds/seed_mongo.js && node seeds/seed_redis.js",
+    "seed:all:extended": "node seeds/seed_mongo.js --extended && node seeds/seed_redis.js --extended"
   },
   "dependencies": {
     "csv-parse": "^5.5.6",
