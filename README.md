@@ -29,8 +29,26 @@ npm run seed:mongo
 npm run seed:redis
 ```
 
-Luego para una query sin argumentos correr: 
+Finalmente, para una query sin argumentos correr: 
 
 ``` bash
 node queries/<nombre archivo de query>
+```
+
+Estas son las queries: 1, 2, 4, 5, 6, 7, 8 y 9.
+
+Las queries con un argumento son: 
+
+``` bash
+node queries/q3_historial_paciente.js <id_paciente>
+```
+
+``` bash
+node queries/q10_pacientes_por_sucursal.js <sucursal>
+```
+
+Las queries con dos argumentos son:
+
+``` bash
+node queries/q15_actualizar_stock.js <id_producto> <cantidad>
 ```
