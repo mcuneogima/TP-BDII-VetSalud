@@ -4,9 +4,13 @@
   "description": "Sistema de Gestión de Clínica Veterinaria - BD2 2026",
   "type": "module",
   "scripts": {
-    "seed:mongo": "node ./src/seeds/seed_mongo.js",
+    "seed:mongo": "node seeds/seed_mongo.js",
     "seed:mongo:extended": "node seeds/seed_mongo.js --extended",
 
+    "seed:redis": "node seeds/seed_redis.js",
+    "seed:all": "node seeds/seed_mongo.js && node seeds/seed_redis.js",
+    "start": "node app.js",
+    "check": "node app.js --check",
     "seed:redis": "node ./src/seeds/seed_redis.js",
     "seed:all": "node seeds/seed_mongo.js && node seeds/seed_redis.js",
     "start": "node ./src/app.js",

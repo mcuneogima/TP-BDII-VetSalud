@@ -163,6 +163,12 @@ Temporary Items
 *.icloud
 
 ### Node ###
+# Dependencias
+node_modules/
+
+# Variables de entorno
+.env
+
 # Logs
 logs
 *.log
@@ -207,6 +213,9 @@ build/Release
 node_modules/
 jspm_packages/
 
+# Archivos temporales
+tmp/
+temp/
 # Snowpack dependency directory (https://snowpack.dev/)
 web_modules/
 
@@ -274,9 +283,12 @@ dist
 # Serverless directories
 .serverless/
 
+# MacOS
+.DS_Store
 # FuseBox cache
 .fusebox/
 
+# Windows
 # DynamoDB Local files
 .dynamodb/
 
@@ -318,6 +330,8 @@ ehthumbs_vista.db
 # Recycle Bin used on file shares
 $RECYCLE.BIN/
 
+# VSCode local
+.vscode/
 # Windows Installer files
 *.cab
 *.msi
@@ -325,9 +339,13 @@ $RECYCLE.BIN/
 *.msm
 *.msp
 
+# Coverage
+coverage/
 # Windows shortcuts
 *.lnk
 
+# Codespaces
+.devcontainer/.env
 node_modules
 
 # End of https://www.toptal.com/developers/gitignore/api/intellij,node,windows,macos,linux
