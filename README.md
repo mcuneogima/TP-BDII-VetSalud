@@ -10,7 +10,7 @@ para tener uno propio basado en uno simple para github Codespaces.
 
 ## Instrucciones para correr el TP
 
-Primero levantar los contenedores de las bases de datos con:
+Primero levantar los contenedores de las bases de datos con (se levantan automaticamente si se usa Github Codespaces):
 
 ``` bash
 docker compose up -d

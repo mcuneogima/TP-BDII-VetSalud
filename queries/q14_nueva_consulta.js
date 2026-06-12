@@ -30,7 +30,7 @@ const estado = args[7]?.trim()
 
 if (!_id || !id_paciente || !id_vet || !fecha || !motivo || !diagnostico || !costo || !estado) {
   console.error('Uso: node q14_nueva_consulta.js <_id> <id_paciente> <id_vet> <fecha> <motivo> <diagnostico> <costo> <estado>')
-  console.error('Ejemplo: node q14_nueva_consulta.js C001 P001 V001 2023-10-10 Consulta de rutina Diagnóstico de rutina 100.00 En proceso')
+  console.error('Ejemplo: node q14_nueva_consulta.js CON001 P001 V001 2023-10-10 Consulta-de-rutina Diagnóstico-de-rutina 100 Seguimiento')
   process.exit(1)
 }
 
