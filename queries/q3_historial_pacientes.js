@@ -45,5 +45,9 @@ if (!idPaciente) {
   console.error('Ejemplo: node q3_historial_pacientes.js P001')
   process.exit(1)
 }
+if (!/^P[0-9]{3}$/.test(idPaciente)) {
+  console.error('ID del paciente inválido.')
+  process.exit(1)
+}
 
 withMongo(async () => { console.log(JSON.stringify(await getHistorialPaciente(idPaciente), null, 2)) })
