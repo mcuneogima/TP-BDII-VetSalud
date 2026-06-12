@@ -7,7 +7,7 @@ export async function getPacientesPorSucursal(sucursal) {
 
   return db.collection('veterinarios').aggregate([
     {
-      $match: { sucursal: sucursal } // borré activo: true porque no lo pide
+      $match: { sucursal: sucursal, activo: true } 
     },
     {
       $lookup: {

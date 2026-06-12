@@ -5,42 +5,36 @@ export async function getHistorialPaciente(idPaciente) {
 
   const db = getDB()
 
+  // Consultas del paciente desde colección separada
+  const consultas = await db.collection('consultas')
+    .find({ id_paciente: idPaciente })
+    .sort({ fecha: 1 })
+    .toArray()
+
+  // Vacunaciones embebidas en el documento del paciente
   const paciente = await db.collection('pacientes')
     .findOne({ _id: idPaciente })
 
   if (!paciente) return null
 
-  const historial = await db.collection('turnos').aggregate([
-  { $match: { id_paciente: idPaciente } },
-  {
-    $sort: { fecha: 1 }
-  }]).toArray()
+  const vacunaciones = (paciente.vacunaciones || [])
+    .sort((a, b) => a.fecha_aplicacion - b.fecha_aplicacion)
 
-  return { id_paciente: idPaciente, nombre: paciente.nombre, historial }
+  // Merge y ordenar por fecha unificada
+  const historial = [
+    ...consultas.map(c => ({
+      tipo: 'consulta',
+      fecha: c.fecha,
+      detalle: c
+    })),
+    ...vacunaciones.map(v => ({
+      tipo: 'vacunacion',
+      fecha: v.fecha_aplicacion,
+      detalle: v
+    }))
+  ].sort((a, b) => a.fecha - b.fecha)
 
-  // // Consultas del paciente desde colección separada
-  // const consultas = await db.collection('consultas')
-  //   .find({ id_paciente: idPaciente })
-  //   .sort({ fecha: 1 })
-  //   .toArray()
-
-  // Vacunaciones embebidas en el documento del paciente
-  // const vacunaciones = (paciente.vacunaciones || [])
-  //   .sort((a, b) => a.fecha_aplicacion - b.fecha_aplicacion)
-
-  // // Merge y ordenar por fecha unificada
-  // const historial = [
-  //   ...consultas.map(c => ({
-  //     tipo: 'consulta',
-  //     fecha: c.fecha,
-  //     detalle: c
-  //   })),
-  //   ...vacunaciones.map(v => ({
-  //     tipo: 'vacunacion',
-  //     fecha: v.fecha_aplicacion,
-  //     detalle: v
-  //   }))
-  // ].sort((a, b) => a.fecha - b.fecha)
+  return { paciente: paciente.nombre, historial }
 }
 
 const args = process.argv.slice(2)
@@ -52,4 +46,4 @@ if (!idPaciente) {
   process.exit(1)
 }
 
-withMongo(async () => { console.log(await getHistorialPaciente(idPaciente)) })
+withMongo(async () => { console.log(JSON.stringify(await getHistorialPaciente(idPaciente), null, 2)) })
