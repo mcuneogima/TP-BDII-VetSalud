@@ -21,7 +21,7 @@ try {
     db.collection('veterinarios').deleteMany({}),
     db.collection('consultas').deleteMany({}),
     db.collection('stock').deleteMany({}),
-    db.collection('turnos').deleteMany({})
+    db.collection('turnos').drop()
   ])
 
   const vacunasPorPaciente = {}
@@ -76,21 +76,6 @@ try {
     activo: vet.activo === 'True'
   }))
 
-  const turnosMongo = consultas.map(c => ({
-    _id: c.id_consulta,
-    id_paciente: c.id_paciente,
-    id_vet: c.id_vet,
-    fecha: new Date(c.fecha),
-    tipo: "Consulta"
-  }))
-  turnosMongo.push(...vacunaciones.map(v => ({
-    _id: v.id_vacuna,
-    id_paciente: v.id_paciente,
-    id_vet: v.id_vet,
-    fecha: new Date(v.fecha_aplicacion),
-    tipo: "Vacunación"
-  })))
-
   const consultasMongo = consultas.map(c => ({
     _id: c.id_consulta,
     id_paciente: c.id_paciente,
@@ -115,7 +100,6 @@ try {
   await db.collection('propietarios').insertMany(propietariosMongo)
   await db.collection('pacientes').insertMany(pacientesMongo)
   await db.collection('veterinarios').insertMany(veterinariosMongo)
-  await db.collection('turnos').insertMany(turnosMongo)
   await db.collection('consultas').insertMany(consultasMongo)
   await db.collection('stock').insertMany(stockMongo)
 
@@ -137,7 +121,28 @@ try {
 
   await db.collection('propietarios').createIndex({ activo: 1 })
 
-  await db.collection('turnos').createIndex({ fecha: 1 })
+  await db.createCollection('turnos', {viewOn: 'consultas', pipeline: [
+    { $project: {
+      _id: '$_id',
+      id_paciente: '$id_paciente',
+      id_vet: '$id_vet',
+      fecha: '$fecha',
+      tipo: { $literal: 'Consulta' }
+    }},
+    { $unionWith: {
+      coll: 'pacientes',
+      pipeline: [
+        { $unwind: '$vacunaciones' },
+        { $project: {
+          _id: '$vacunaciones.id_vacuna',
+          id_paciente: '$_id',
+          id_vet: '$vacunaciones.id_vet',
+          fecha: '$vacunaciones.fecha_aplicacion',
+          tipo: { $literal: 'Vacunación' }
+        }}
+      ]
+    }}
+  ]})
 
   console.log('MongoDB poblado correctamente')
 
