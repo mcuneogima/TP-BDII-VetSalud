@@ -67,8 +67,8 @@ try {
         fecha.getMonth() + 1
       ).padStart(2, '0')}`
 
-    await redisClient.incrBy(
-      `stats:ingresos:${periodo}:${consulta.id_vet}`,
+    await redisClient.hIncrBy(
+      `stats:ingresos:${periodo}`,consulta.id_vet,
       Number(consulta.costo)
     )
   }

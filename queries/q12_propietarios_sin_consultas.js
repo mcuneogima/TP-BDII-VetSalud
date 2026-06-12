@@ -1,7 +1,7 @@
 import { getDB } from '../config/db.js'
 import { withMongo } from '../utils/withMongo.js'
 
-export async function getPropietariosConMultiplesPacientes() {
+export async function getPropietariosSinConsultas() {
 
   const db = getDB()
   const yearAgo = new Date()  
@@ -53,4 +53,4 @@ export async function getPropietariosConMultiplesPacientes() {
   ]).toArray()
 }
 
-withMongo(async () => { console.log(await getPropietariosConMultiplesPacientes()) })
+withMongo(async () => { console.log(await getPropietariosSinConsultas()) })

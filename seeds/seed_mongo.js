@@ -21,7 +21,7 @@ try {
     db.collection('veterinarios').deleteMany({}),
     db.collection('consultas').deleteMany({}),
     db.collection('stock').deleteMany({}),
-    db.collection('turnos').drop()
+    db.collection('turnos').drop().catch(() => {})
   ])
 
   const vacunasPorPaciente = {}
