@@ -7,25 +7,25 @@ export async function getPacientesPorSucursal(sucursal) {
 
   return db.collection('veterinarios').aggregate([
     {
-      $match: { sucursal, activo: true }
+      $match: { sucursal: sucursal } // borré activo: true porque no lo pide
     },
     {
       $lookup: {
-        from: 'consultas',
+        from: 'turnos',
         localField: '_id',
         foreignField: 'id_vet',
-        as: 'consultas'
+        as: 'turno'
       }
     },
-    {
-      $unwind: '$consultas'
+    { 
+      $unwind: { path: '$turno', preserveNullAndEmptyArrays: false } 
     },
-    {
+    { 
       $group: {
-        _id: '$consultas.id_paciente'
+        _id: '$turno.id_paciente'
       }
     },
-    {
+    { 
       $lookup: {
         from: 'pacientes',
         localField: '_id',
@@ -38,7 +38,8 @@ export async function getPacientesPorSucursal(sucursal) {
     },
     {
       $replaceRoot: { newRoot: '$paciente' }
-    }
+    },
+    { $project: {vacunaciones: 0} }
   ]).toArray()
 }
 

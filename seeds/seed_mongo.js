@@ -20,7 +20,8 @@ try {
     db.collection('pacientes').deleteMany({}),
     db.collection('veterinarios').deleteMany({}),
     db.collection('consultas').deleteMany({}),
-    db.collection('stock').deleteMany({})
+    db.collection('stock').deleteMany({}),
+    db.collection('turnos').deleteMany({})
   ])
 
   const vacunasPorPaciente = {}
@@ -61,8 +62,8 @@ try {
     email: prop.email,
     telefono: prop.telefono,
     ciudad: prop.ciudad,
-    provincia: prop.provincia,
-    activo: true
+    provincia: prop.provincia
+    // activo: true // redundante
   }))
 
   const veterinariosMongo = veterinarios.map(vet => ({
@@ -74,6 +75,21 @@ try {
     sucursal: vet.sucursal,
     activo: vet.activo === 'True'
   }))
+
+  const turnosMongo = consultas.map(c => ({
+    _id: c.id_consulta,
+    id_paciente: c.id_paciente,
+    id_vet: c.id_vet,
+    fecha: new Date(c.fecha),
+    tipo: "Consulta"
+  }))
+  turnosMongo.push(...vacunaciones.map(v => ({
+    _id: v.id_vacuna,
+    id_paciente: v.id_paciente,
+    id_vet: v.id_vet,
+    fecha: new Date(v.fecha_aplicacion),
+    tipo: "Vacunación"
+  })))
 
   const consultasMongo = consultas.map(c => ({
     _id: c.id_consulta,
@@ -99,6 +115,7 @@ try {
   await db.collection('propietarios').insertMany(propietariosMongo)
   await db.collection('pacientes').insertMany(pacientesMongo)
   await db.collection('veterinarios').insertMany(veterinariosMongo)
+  await db.collection('turnos').insertMany(turnosMongo)
   await db.collection('consultas').insertMany(consultasMongo)
   await db.collection('stock').insertMany(stockMongo)
 
@@ -119,6 +136,8 @@ try {
   await db.collection('consultas').createIndex({ id_vet: 1, fecha: -1 })  
 
   await db.collection('propietarios').createIndex({ activo: 1 })
+
+  await db.collection('turnos').createIndex({ fecha: 1 })
 
   console.log('MongoDB poblado correctamente')
 
