@@ -44,7 +44,7 @@ Finalmente, para una query sin argumentos correr:
 node queries/<nombre archivo de query>
 ```
 
-Estas son las queries sin argumentos: 1, 2, 4, 5, 6, 7, 8 y 9.
+Estas son las queries sin argumentos: 1, 2, 4, 5, 6, 7, 8, 9, 11 y 12.
 
 Las queries con un argumento son: 
 
@@ -56,8 +56,26 @@ node queries/q3_historial_pacientes.js <id_paciente>
 node queries/q10_pacientes_por_sucursal.js <sucursal>
 ```
 
-Las queries con dos argumentos son:
+``` bash
+node queries/q13_delete_propietario.js <id_propietario>
+```
+
+La query 15 requiere dos argumentos:
 
 ``` bash
 node queries/q15_actualizar_stock.js <id_producto> <cantidad>
+```
+
+Las queries que requieren ocho argumentos son:
+
+``` bash
+node queries/q14_nueva_consulta.js <id_consulta> <id_paciente> <id_vet> <fecha> <motivo> <diagnostico> <costo> <estado>
+```
+
+``` bash
+node queries/q13_insert_propietario.js <id_propietario> <nombre> <apellido> <dni> <email> <telefono> <ciudad> <provincia>
+```
+
+``` bash
+node queries/q13_update_propietario.js <id_propietario> <nombre> <apellido> <dni> <email> <telefono> <ciudad> <provincia>
 ```
