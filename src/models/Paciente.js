@@ -1,29 +1,28 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
-const veterinarioSchema = new mongoose.Schema({
-    id_vet: {
+const pacienteSchema = new mongoose.Schema({
+    id_paciente: {
         type: String,
         required: true,
-        unique: true
+        unique: true,
     },
     nombre: {
         type: String,
         required: true
     },
-    apellido: {
+    especie: {
         type: String,
         required: true
     },
-    matricula: {
-        type: String,
-        required: true,
-        unique: true
-    },
-    especialidad: {
+    raza: {
         type: String,
         required: true
     },
-    sucursal: {
+    fecha_nac: {
+        type: Date,
+        required: true
+    },
+    id_propietario: {
         type: String,
         required: true
     },
@@ -33,5 +32,4 @@ const veterinarioSchema = new mongoose.Schema({
     }
 });
 
-module.exports = mongoose.model('Veterinario', veterinarioSchema);
-
+export default mongoose.model('Paciente', pacienteSchema);

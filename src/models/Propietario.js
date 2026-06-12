@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 const propietarioSchema = new mongoose.Schema({
     id_propietario: {
@@ -33,7 +33,13 @@ const propietarioSchema = new mongoose.Schema({
     provincia: {
         type: String,
         required: true
+    },
+    activo: {
+        type: Boolean,
+        required: true,
+        default: true,
+        index: true
     }
 })
 
-module.exports = mongoose.model('Propietario', propietarioSchema);
+export default mongoose.model('Propietario', propietarioSchema);
