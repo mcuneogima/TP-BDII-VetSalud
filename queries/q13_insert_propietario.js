@@ -2,6 +2,11 @@ import { getDB } from '../config/db.js'
 import { withMongo } from '../utils/withMongo.js'
 export async function insertPropietario(_id, nombre, apellido, dni, email, telefono, ciudad, provincia) {
     const db = getDB()
+    const existing = await db.collection('propietarios').findOne({ _id })
+    if (existing) {
+        console.error('Propietario ya existe con id:', _id)
+        return null
+    }
     const result = await db.collection('propietarios').insertOne(
         { _id, nombre, apellido, dni, email, telefono, ciudad, provincia, activo: true }
     )
@@ -20,7 +25,7 @@ const provincia = args[7]?.trim()
 
 if (!_id || !nombre || !apellido || !dni || !email || !telefono || !ciudad || !provincia) {
   console.error('Uso: node q13_insert_propietario.js <_id> <nombre> <apellido> <dni> <email> <telefono> <ciudad> <provincia>')
-  console.error('Ejemplo: node q13_insert_propietario.js C001 Juan Pérez 12345678 juan.perez@email.com 123456789 Chivilcoy Buenos Aires')
+  console.error('Ejemplo: node q13_insert_propietario.js C001 Juan Pérez 12345678 juan.perez@email.com 123456789 Chivilcoy "Buenos Aires"')
   process.exit(1)
 }
 

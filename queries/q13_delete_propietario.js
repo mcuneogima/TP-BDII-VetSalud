@@ -2,6 +2,11 @@ import { getDB } from '../config/db.js'
 import { withMongo } from '../utils/withMongo.js'
 export async function deletePropietario(_id) {
     const db = getDB()
+    const existing = await db.collection('propietarios').findOne({ _id })
+    if (!existing) {
+        console.error('Propietario no encontrado con id:', _id)
+        return null
+    }
     const result = await db.collection('propietarios').updateOne(
         {_id: _id},
         { $set: { activo: false } },

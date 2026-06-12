@@ -79,3 +79,20 @@ node queries/q13_insert_propietario.js <id_propietario> <nombre> <apellido> <dni
 ``` bash
 node queries/q13_update_propietario.js <id_propietario> <nombre> <apellido> <dni> <email> <telefono> <ciudad> <provincia>
 ```
+Donde: 
+- los parámetros de más de una palabra deben ir contenidos por comillas (ej "Buenos Aires"), 
+- los email llevan formato "ejemplo@ejemplo.ejemplo",
+- los teléfonos, cantidades, costos y DNIs son números enteros;
+- las fechas llevan formato 'YYYY-MM-DD',
+- los estados válidos son "Cerrada" y "Seguimiento", y
+- el formato de los identificadores es:
+
+|entidad|formato|
+|----|----|
+|propietario|CXXX|
+|paciente|PXXX|
+|veterinario|VXXX|
+|consulta|CONXXX|
+|producto|PRDXXX|
+|vacunacion|VACXXX|
+ (X es un dígito)
