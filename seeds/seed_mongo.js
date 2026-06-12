@@ -62,8 +62,8 @@ try {
     email: prop.email,
     telefono: prop.telefono,
     ciudad: prop.ciudad,
-    provincia: prop.provincia
-    // activo: true // redundante
+    provincia: prop.provincia,
+    activo: true // redundante
   }))
 
   const veterinariosMongo = veterinarios.map(vet => ({
