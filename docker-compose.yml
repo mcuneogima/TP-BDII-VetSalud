@@ -7,10 +7,7 @@ services:
       - .:/workspace
     working_dir: /workspace
     command: sleep infinity
-    depends_on:
-      - mongo
-      - redis
-      
+
   mongo:
     image: mongo:8
     restart: unless-stopped
