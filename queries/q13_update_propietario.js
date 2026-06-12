@@ -21,8 +21,8 @@ const ciudad = args[6]?.trim()
 const provincia = args[7]?.trim()
 
 if (!_id || !nombre || !apellido || !dni || !email || !telefono || !ciudad || !provincia) {
-  console.error('Uso: node q13_upsert_propietario.js <_id> <nombre> <apellido> <dni> <email> <telefono> <ciudad> <provincia>')
-  console.error('Ejemplo: node q13_upsert_propietario.js C001 Juan Pérez 12345678 juan.perez@email.com 123456789 Chivilcoy Buenos Aires')
+  console.error('Uso: node q13_update_propietario.js <_id> <nombre> <apellido> <dni> <email> <telefono> <ciudad> <provincia>')
+  console.error('Ejemplo: node q13_update_propietario.js C001 Juan Pérez 12345678 juan.perez@email.com 123456789 Chivilcoy Buenos Aires')
   process.exit(1)
 }
 
